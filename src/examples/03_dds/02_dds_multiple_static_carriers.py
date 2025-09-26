@@ -29,7 +29,7 @@ with spcm.Card(card_type=spcm.SPCM_TYPE_AO) as card:             # if you want t
     channels = spcm.Channels(card) # enable all channels
     channels.enable(True)
     channels.output_load(50 * units.ohm)
-    channels.amp(1 * units.V)
+    channels.amp(100 * units.mV)
     card.write_setup() # IMPORTANT! this turns on the card's system clock signals, that are required for DDS to work
     
     # Setup DDS
@@ -40,7 +40,7 @@ with spcm.Card(card_type=spcm.SPCM_TYPE_AO) as card:             # if you want t
     num_cores = len(dds)
     for core in dds:
         core.amp(40 * units.percent / num_cores)
-        core.freq(5 * units.MHz + int(core) * 5 * units.MHz)
+        core.freq(80 * units.MHz + int(core) * 1 * units.MHz)
     dds.exec_at_trg()
     dds.write_to_card()
 

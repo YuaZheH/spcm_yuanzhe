@@ -41,13 +41,13 @@ with spcm.Card(card_type=spcm.SPCM_TYPE_AO) as card:            # if you want to
     dds.trg_src(spcm.SPCM_DDS_TRG_SRC_TIMER)
     dds.trg_timer(3.0 * units.s)
     dds[0].amp(40 * units.percent)
-    dds[0].freq(5 * units.MHz)
+    dds[0].freq(95 * units.MHz)
     dds.exec_at_trg()
-    
-    dds[0].freq(10 * units.MHz)
+
+    dds[0].freq(100 * units.MHz)
     dds.exec_at_trg()
-    
-    dds[0].freq(15 * units.MHz)
+
+    dds[0].freq(105 * units.MHz)
     dds.exec_at_trg()
     
     dds.write_to_card()

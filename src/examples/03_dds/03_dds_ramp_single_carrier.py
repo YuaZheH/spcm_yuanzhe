@@ -47,7 +47,7 @@ with spcm.Card(card_type=spcm.SPCM_TYPE_AO) as card:             # if you want t
 
     # Create one carrier and keep on for 2 seconds
     dds[0].amp(40 * units.percent)
-    dds[0].freq(5 * units.MHz) # 5 MHz
+    dds[0].freq(100 * units.MHz) # 5 MHz
     dds.exec_at_trg()
 
     # Ramp the frequency of the carrier
@@ -56,7 +56,7 @@ with spcm.Card(card_type=spcm.SPCM_TYPE_AO) as card:             # if you want t
 
     # Stop frequency ramp
     dds[0].frequency_slope(0)
-    dds[0].freq(15 * units.MHz) # 15 MHz
+    dds[0].freq(110 * units.MHz) # 15 MHz
     dds.exec_at_trg()
 
     # Ramp the amplitude of the carrier
